@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Survey Form</title>
+</head>
+<body>
+  <h1>Health Survey Form</h1>
+  <form action="/submit-survey" method="post">
+
+
+    <div>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+    </div>
+
+    <div>
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age" required><br><br>
+    </div>
+    <div>
+      <label for="gender">Gender:</label><br>
+      <input type="radio" id="male" name="gender" value="Male" required>
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="Female">
+      <label for="female">Female</label><br>
+
+    <div>
+      <label for="height">Height (in cm):</label><br>
+      <input type="number" id="height" name="height" min="50" required><br><br>
+    </div>
+    <div>
+      <label for="weight">Weight (in kg):</label><br>
+      <input type="number" id="weight" name="weight" min="30" required><br><br>
+    </div>
+
+    <div>
+      <p>Lifestyle habits? </p>
+      <input type="checkbox" id="smoking" name="lifestyle[]" value="Smoking">
+      <label for="smoking">Smoking</label><br>
+      <input type="checkbox" id="alcohol" name="lifestyle[]" value="Alcohol Consumption">
+      <label for="alcohol">Alcohol Consumption</label><br>
+      <input type="checkbox" id="stress" name="lifestyle[]" value="Stress">
+      <label for="stress">Stress</label><br><br>
+    </div>
+
+    <div>
+      <label for="diet">Dietary Preference:</label><br>
+      <select id="diet" name="diet" required>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Non-Vegetarian">Non-Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+      </select><br><br>
+    </div>
+    <div>
+      <label for="activity-level">Activity Level:</label><br>
+      <select id="activity-level" name="activity-level" required>
+        <option value="Sedentary">Sedentary</option>
+        <option value="Moderate">Moderate</option>
+        <option value="Active">Active</option>
+      </select><br><br>
+    </div>
+    <div>
+      <label for="health-concerns"> Health Concerns (if any):</label><br>
+      <textarea id="health-concerns" name="health-concerns" rows="4" cols="50" placeholder="health concerns..."></textarea><br><br>
+    </div>
+    <button type="submit">Submit Survey</button>
+  </form>
+</body>
+</html>
