@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz Submission Form</title>
+  
+</head>
+<body>
+  <h1>Online Quiz</h1>
+  
+  <div class="timer">Total Time: <span id="timer">00:10:00</span></div>
+
+  <form action="/submit-quiz" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+    
+    <div class="question">
+      <label>1. What is the capital of France?</label><br>
+      <input type="radio" id="paris" name="question1" value="Paris" required>
+      <label for="paris">Paris</label><br>
+      <input type="radio" id="london" name="question1" value="London">
+      <label for="london">London</label><br>
+      <input type="radio" id="rome" name="question1" value="Rome">
+      <label for="rome">Rome</label>
+    </div>
+    
+    <div class="question">
+      <label>2. Capital of Germany:</label><br>
+      <input type="checkbox" id="python" name="question2" value="Python">
+      <label for="python">Berlin</label><br>
+      <input type="checkbox" id="java" name="question2" value="Java">
+      <label for="java">Moscow</label><br>
+      <input type="checkbox" id="javascript" name="question2" value="JavaScript">
+      <label for="javascript">Frankfurt</label>
+    </div>
+    
+    
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+
+    
+    
+</body>
+</html>
