@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizable Form Generator</title>
+</head>
+<body>
+  <h1>Custom Form Generator</h1>
+  
+  <form id="form-generator">
+    <label for="form-name">Form Name:</label><br>
+    <input type="text" id="form-name" placeholder="Enter form name"><br><br>
+    
+    <label for="num-fields">Number of Input Fields:</label><br>
+    <input type="number" id="num-fields" min="1" placeholder="Enter number of fields"><br><br>
+    
+    <button type="button" onclick="generateFields()">Generate Fields</button><br><br>
+  </form>
+  
+  <div id="fields-section"></div>
+  
+  <h2>Form Preview</h2>
+  <form id="form-preview"></form>
+  
+  <script>
+    function generateFields() {
+      const fieldsSection = document.getElementById('fields-section');
+      const previewForm = document.getElementById('form-preview');
+      const numFields = document.getElementById('num-fields').value;
+      const formName = document.getElementById('form-name').value;
+
+      fieldsSection.innerHTML = '';
+      previewForm.innerHTML = `<h3>${formName || 'Custom Form'}</h3>`;
+
+      for (let i = 1; i <= numFields; i++) {
+        const fieldContainer = document.createElement('div');
+        fieldContainer.innerHTML = `
+          <label>Field ${i} Type:</label><br>
+          <select class="field-type" onchange="updatePreview()">
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+            <option value="number">Number</option>
+            <option value="date">Date</option>
+          </select><br><br>
+          <label>Field ${i} Label:</label><br>
+          <input type="text" class="field-label" placeholder="Enter label" oninput="updatePreview()"><br><br>
+        `;
+        fieldsSection.appendChild(fieldContainer);
+      }
+    }
+
+    function updatePreview() {
+      const previewForm = document.getElementById('form-preview');
+      const fieldTypes = document.querySelectorAll('.field-type');
+      const fieldLabels = document.querySelectorAll('.field-label');
+
+      previewForm.innerHTML = `<h3>${document.getElementById('form-name').value || 'Custom Form'}</h3>`;
+      
+      fieldTypes.forEach((type, index) => {
+        const label = fieldLabels[index].value || `Field ${index + 1}`;
+        const inputType = type.value;
+        const input = `<label>${label}:</label><br><input type="${inputType}" placeholder="Enter ${label.toLowerCase()}"><br><br>`;
+        previewForm.innerHTML += input;
+      });
+    }
+  </script>
+</body>
+</html>
