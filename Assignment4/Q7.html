@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Booking Form</title>
+  <script>
+    // Function to calculate total cost based on travel class and number of travelers
+    function calculateCost() {
+      var travelClass = document.querySelector('input[name="travel-class"]:checked');
+      var numTravelers = document.getElementById("num-travelers").value;
+      
+      // Prices based on travel class (in USD)
+      var prices = {
+        "Economy": 200,
+        "Business": 500,
+        "First Class": 1000
+      };
+      
+      if (travelClass) {
+        var totalCost = prices[travelClass.value] * numTravelers;
+        document.getElementById("total-cost").textContent = "$" + totalCost;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Travel Booking Form</h1>
+  <form action="/submit-booking" method="post">
+    
+    <div>
+      <label for="full-name">Name:</label><br>
+      <input type="text" id="full-name" name="full-name" required><br><br>
+    </div>
+    <div>
+      <label for="contact-info">Contact Information:</label><br>
+      <input type="text" id="contact-info" name="contact-info" required><br><br>
+    </div>
+    <div>
+      <label for="destination">Destination:</label><br>
+      <select id="destination" name="destination" required>
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+        <option value="New York">New York</option>
+        <option value="Other">Other</option>
+      </select><br><br>
+    </div>
+    <div>
+      <label for="travel-dates">Travel Dates:</label><br>
+      <input type="date" id="travel-dates" name="travel-dates" required><br><br>
+    </div>
+    <div>
+      <label for="num-travelers">Number of Travelers:</label><br>
+      <input type="number" id="num-travelers" name="num-travelers" min="1" value="1" required ><br><br>
+    </div>
+
+    <div>
+      <label>Travel Class:</label><br>
+      <input type="radio" id="economy" name="travel-class" value="Economy" required >
+      <label for="economy">Economy</label><br>
+      <input type="radio" id="business" name="travel-class" value="Business">
+      <label for="business">Business</label><br>
+      <input type="radio" id="first-class" name="travel-class" value="First Class" >
+      <label for="first-class">First Class</label><br><br>
+    </div>
+    
+    <div>
+      <label for="insurance">Opt for Travel Insurance:</label>
+      <input type="checkbox" id="insurance" name="insurance"><br><br>
+    </div>
+
+    <div>
+      <label>Total Cost: </label><span id="total-cost">$0</span><br><br>
+    </div>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</body>
+</html>

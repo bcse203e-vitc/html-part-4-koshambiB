@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Room Booking</title>
+</head>
+<body>
+  <h1>Hotel Room Booking</h1>
+  
+  <form action="/book-room" method="post">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    
+    <label for="contact">Contact Information:</label><br>
+    <input type="text" id="contact" name="contact" placeholder="Phone or Email" required><br><br>
+    
+    <label for="checkin">Check-in Date:</label><br>
+    <input type="date" id="checkin" name="checkin" required><br><br>
+    
+    <label for="checkout">Check-out Date:</label><br>
+    <input type="date" id="checkout" name="checkout" required><br><br>
+    
+    <label for="guests">Number of Guests:</label><br>
+    <input type="number" id="guests" name="guests" min="1" max="10" required><br><br>
+    
+    <label for="room-type">Room Type:</label><br>
+    <select id="room-type" name="room-type" required>
+      <option value="" disabled selected>Select a room type</option>
+      <option value="Single">Single</option>
+      <option value="Double">Double</option>
+      <option value="Suite">Suite</option>
+    </select><br><br>
+    
+    <label>Additional Services:</label><br>
+    <input type="checkbox" id="breakfast" name="services" value="Breakfast">
+    <label for="breakfast">Breakfast</label><br>
+    <input type="checkbox" id="airport-pickup" name="services" value="Airport Pickup">
+    <label for="airport-pickup">Airport Pickup</label><br>
+    <input type="checkbox" id="gym" name="services" value="Gym Access">
+    <label for="gym">Gym Access</label><br><br>
+    
+    <button type="submit">Book Now</button>
+  </form>
+</body>
+</html>

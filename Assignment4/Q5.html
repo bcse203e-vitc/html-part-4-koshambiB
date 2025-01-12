@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Order Form</title>
+</head>
+<body>
+  <h1>Product Order Form</h1>
+  <form action="/submit-order" method="post">
+    
+    
+    <div>
+      <label for="customer-name">Customer Name:</label><br>
+      <input type="text" id="customer-name" name="customer-name" required><br><br>
+    </div>
+
+    <div>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required placeholder="example@domain.com"><br><br>
+    </div>
+
+    <div>
+      <label for="address">Address:</label><br>
+      <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+    </div>
+    <div>
+      <label for="product">Product:</label><br>
+      <select id="product" name="product" required>
+        <option value="product1" data-price="50">Product 1 - $50</option>
+        <option value="product2" data-price="75">Product 2 - $75</option>
+        <option value="product3" data-price="100">Product 3 - $100</option>
+      </select><br><br>
+    </div>
+    <div>
+      <label for="quantity">Quantity:</label><br>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required><br><br>
+    </div>
+    <div>
+      <label for="delivery">Delivery Preferences:</label><br>
+      <input type="radio" id="standard" name="delivery" value="standard" checked>
+      <label for="standard">Standard</label><br>
+      <input type="radio" id="express" name="delivery" value="express">
+      <label for="express">Express</label><br><br>
+    </div>
+    <div>
+      <label for="coupon">Apply Coupon:</label><br>
+      <input type="text" id="coupon" name="coupon" placeholder="Enter coupon code"><br><br>
+    </div>
+    <button type="submit">Place Order</button>
+  </form>
+  <div>
+    <h2>Order Summary</h2>
+    <p>Product: <span id="order-product">Product 1</span></p>
+    <p>Quantity: <span id="order-quantity">1</span></p>
+    <p>Total Price: $<span id="total-price">50</span></p>
+  </div>
+</body>
+</html>

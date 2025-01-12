@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" placeholder="example@domain.com"><br><br>
+        <label for="rating">Rate the Website (1-5 stars):</label><br>
+        <input type="radio" id="rating-1" name="rating" value="1" required>
+        <label for="rating-1">1</label>
+        <input type="radio" id="rating-2" name="rating" value="2">
+        <label for="rating-2">2</label>
+        <input type="radio" id="rating-3" name="rating" value="3">
+        <label for="rating-3">3</label>
+        <input type="radio" id="rating-4" name="rating" value="4">
+        <label for="rating-4">4</label>
+        <input type="radio" id="rating-5" name="rating" value="5">
+        <label for="rating-5">5</label><br><br>
+        <label for="feedbacks">Feedback</label><br>
+        <textarea id="feedbacks" name="feedbacks" rows="4" cols="50" placeholder="additional comments"></textarea><br><br>
+        <label for="feedback-type">Type of Feedback:</label><br>
+        <select id="feedback-type" name="feedback-type" required>
+          <option value="suggestion">Suggestion</option>
+          <option value="bug-report">Bug Report</option>
+          <option value="compliment">Compliment</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
